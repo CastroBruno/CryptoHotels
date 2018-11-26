@@ -47,5 +47,4 @@ while True:
 		client_sock.close()
 		server_sock.close()
 		print "all done"
-
-break
+		break

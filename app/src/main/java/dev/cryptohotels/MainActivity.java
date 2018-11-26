@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 //ConnectThread thread = new ConnectThread(mBluetoothAdapter.listenUsingRfcommWithServiceRecord("Door", UUID.fromString("91b085a1-4179-40c5-8766-b894bca9ffa9")));
-                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice("213"));
+                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice("B8:27:EB:CC:44:6C"));
                 thread.run();
                 thread.write("Open".getBytes());
                 thread.cancel();
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 //ConnectThread thread = new ConnectThread(mBluetoothAdapter.listenUsingRfcommWithServiceRecord("Door", UUID.fromString("91b085a1-4179-40c5-8766-b894bca9ffa9")));
-                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice("213"));
+                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice("B8:27:EB:CC:44:6C"));
                 thread.run();
                 thread.write("Close".getBytes());
                 thread.cancel();
