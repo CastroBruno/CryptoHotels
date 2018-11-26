@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button button = findViewById(R.id.button);
+        final Button button2 = findViewById(R.id.button2);
         final int REQUEST_ENABLE_BT = 1337;
 
         //Adaptador Bluetooth
@@ -37,6 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice("213"));
                 thread.run();
                 thread.write("Open".getBytes());
+                thread.cancel();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                //ConnectThread thread = new ConnectThread(mBluetoothAdapter.listenUsingRfcommWithServiceRecord("Door", UUID.fromString("91b085a1-4179-40c5-8766-b894bca9ffa9")));
+                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice("213"));
+                thread.run();
+                thread.write("Close".getBytes());
                 thread.cancel();
             }
         });
