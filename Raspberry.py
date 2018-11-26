@@ -6,10 +6,6 @@ from bluetooth import *
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
 
-#while True:
-#	print()	
-#	time.sleep(1)
-
 server_sock=BluetoothSocket( RFCOMM )
 server_sock.bind(("",PORT_ANY))
 server_sock.listen(1)
@@ -21,8 +17,7 @@ uuid = "91b085a1-4179-40c5-8766-b894bca9ffa9"
 advertise_service( server_sock, "Door",
                    service_id = uuid,
                    service_classes = [ uuid, SERIAL_PORT_CLASS ],
-                   profiles = [ SERIAL_PORT_PROFILE ], 
-#                   protocols = [ OBEX_UUID ] 
+                   profiles = [ SERIAL_PORT_PROFILE ]
                     )
 while True:          
 	print "Waiting for connection on RFCOMM channel %d" % port
