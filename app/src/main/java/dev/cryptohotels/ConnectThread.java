@@ -2,6 +2,8 @@ package dev.cryptohotels;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -74,6 +76,8 @@ public class ConnectThread extends Thread {
         try {
             mmOutStream.write(bytes);
         } catch (IOException e) { }
+
+
     }
 
 }
