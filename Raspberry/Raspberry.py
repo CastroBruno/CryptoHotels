@@ -17,7 +17,7 @@ uuid = "91b085a1-4179-40c5-8766-b894bca9ffa9"
 advertise_service( server_sock, "Door",
                    service_id = uuid,
                    service_classes = [ uuid, SERIAL_PORT_CLASS ],
-                   profiles = [ SERIAL_PORT_PROFILE ]
+                   #profiles = [ SERIAL_PORT_PROFILE ]
                     )
 while True:          
 	print "Waiting for connection on RFCOMM channel %d" % port
